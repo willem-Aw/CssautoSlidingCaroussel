@@ -14,9 +14,16 @@
 .slider {
     display: flex;
     width: max-content;
+    /* Fallback GPU hack if the will-change property isn't supported;
+    */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
     /* smooth, hardware-accelerated transform */
     will-change: transform;
-    animation: slide 10s linear infinite;
+    animation: slide 30s linear infinite;
 }
 
 /* Pause animation while hovering the container */
@@ -35,7 +42,7 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     flex-shrink: 0;
 }
@@ -44,8 +51,16 @@
     0% {
         transform: translate3d(0, 0, 0);
     }
+
     100% {
         /* move exactly half of the slider width */
         transform: translate3d(-50%, 0, 0);
     }
+}
+
+/* Fallback si pas d’animations CSS */
+.no-css-animation .slider {
+    animation: none !important;
+    position: relative;
+    left: 0;
 }

@@ -29,3 +29,12 @@ Modify the animation duration in `style.css`:
 ## Browser Support
 
 Works in all modern browsers that support CSS animations and transforms.
+
+## In case of any animation issues on old browsers
+
+Use with the javascript provided in the file `script.js`.
+In this case, to update the animation speed change the line below with higher value
+
+```js
+var speed = 0.5;
+```
