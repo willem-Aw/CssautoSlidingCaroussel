@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    overflow: hidden;
+    width: 100vw;
+    padding: 20px 0;
+}
+
+.slider {
+    display: flex;
+    width: max-content;
+    /* smooth, hardware-accelerated transform */
+    will-change: transform;
+    animation: slide 10s linear infinite;
+}
+
+/* Pause animation while hovering the container */
+.container:hover .slider {
+    animation-play-state: paused;
+}
+
+/* Explicit default (running) state */
+.container .slider {
+    animation-play-state: running;
+}
+
+.card {
+    width: 200px;
+    margin: 0 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    flex-shrink: 0;
+}
+
+@keyframes slide {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        /* move exactly half of the slider width */
+        transform: translate3d(-50%, 0, 0);
+    }
+}
