@@ -38,3 +38,7 @@ In this case, to update the animation speed change the line below with higher va
 ```js
 var speed = 0.5;
 ```
+
+## Live Preview
+
+Here is the link : [CssautoSlidingCaroussel](https://willem-aw.github.io/CssautoSlidingCaroussel/) 
